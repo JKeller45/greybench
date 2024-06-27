@@ -25,7 +25,6 @@ def main():
 
     print(f"Single-threaded time: {sum(single_threaded_times.values()):.6f}s")
     print(f"Multi-threaded time: {sum(multi_threaded_times.values()):.6f}s")
-    print(f"Speedup: {sum(single_threaded_times.values()) / sum(multi_threaded_times.values()):.6f}\n--------------------------------------------------\n")
     
     print(single_threaded_times)
     print(multi_threaded_times)

@@ -12,6 +12,6 @@ def derivative(x: ti.f64) -> ti.f64:
 def newtons_method_1T() -> ti.f64:
     x = 100_000.0
     ti.loop_config(serialize=True)
-    for _ in range(10_000_000_000):
+    for _ in range(100_000_000):
         x = x - function(x) / derivative(x)
     return x
