@@ -23,9 +23,12 @@ def factorize(n: ti.i64):
     return cnt
 
 @ti.kernel
-def factor_loop():
-    max = 100000
-    num = 1
-    while num < max:
+def factor_loop_1T():
+    ti.loop_config(serialize=True)
+    for num in range(100000):
         factorize(num)
-        num += 1
+
+@ti.kernel
+def factor_loop_nT():
+    for num in range(100000):
+        factorize(num)
